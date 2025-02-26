@@ -164,8 +164,8 @@ COPY rhel9-python-3.9/nginx/api/ /opt/app-root/api/
 # Launcher
 WORKDIR /opt/app-root/bin
 
-COPY rstudio/rhel9-python-3.9/utils utils/
-COPY rstudio/rhel9-python-3.9/run-rstudio.sh rstudio/rhel9-python-3.9/setup_rstudio.py rstudio/rhel9-python-3.9/rsession.sh rstudio/rhel9-python-3.9/run-nginx.sh ./
+COPY rhel9-python-3.9/utils utils/
+COPY rhel9-python-3.9/run-rstudio.sh rstudio/rhel9-python-3.9/setup_rstudio.py rstudio/rhel9-python-3.9/rsession.sh rstudio/rhel9-python-3.9/run-nginx.sh ./
 
 # Unregister the system
 RUN subscription-manager remove --all && subscription-manager unregister && subscription-manager clean
