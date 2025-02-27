@@ -11,9 +11,9 @@ LABEL name="odh-notebook-rstudio-server-rhel9-python-3.9" \
       description="RStudio Server image with python 3.9 based on Red Hat Enterprise Linux 9" \
       io.k9s.display-name="RStudio Server image with python 3.9 based on Red Hat Enterprise Linux 9" \
       io.k9s.description="RStudio Server image with python 3.9 based on Red Hat Enterprise Linux 9" \
-      authoritative-source-url="https://github.com/opendatahub-io/notebooks" \
+      authoritative-source-url="https://github.com/lcardonag/RStudioEdwin" \
       io.openshift.build.commit.ref="main" \
-      io.openshift.build.source-location="https://github.com/opendatahub-io/notebooks/tree/main/rstudio/rhel9-python-3.9" \
+      io.openshift.build.source-location="https://github.com/lcardonag/RStudioEdwin/tree/main/rhel9-python-3.9" \
       io.openshift.build.image="quay.io/opendatahub/workbench-images:rstudio-rhel9-python-3.9"
 
 USER root
@@ -165,7 +165,7 @@ COPY rhel9-python-3.9/nginx/api/ /opt/app-root/api/
 WORKDIR /opt/app-root/bin
 
 COPY rhel9-python-3.9/utils utils/
-COPY rhel9-python-3.9/run-rstudio.sh rstudio/rhel9-python-3.9/setup_rstudio.py rstudio/rhel9-python-3.9/rsession.sh rstudio/rhel9-python-3.9/run-nginx.sh ./
+COPY rhel9-python-3.9/run-rstudio.sh rhel9-python-3.9/setup_rstudio.py rhel9-python-3.9/rsession.sh rhel9-python-3.9/run-nginx.sh ./
 
 # Unregister the system
 RUN subscription-manager remove --all && subscription-manager unregister && subscription-manager clean
